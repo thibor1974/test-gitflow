@@ -1,3 +1,3 @@
 test gitflow
 on develop branch
-on feature branch thib_feature1
+on feature branch thib_feature2
