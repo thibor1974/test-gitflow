@@ -1,18 +1,18 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: {{ .Values.stress-ng.fullname }}
+  name: {{ .Values.stressng.fullname }}
   labels:
-    app: {{ .Values.stress-ng.name }}
+    app: {{ .Values.stressng.name }}
 spec:
   replicas: {{ .Values.replicaCount }}
   selector:
     matchLabels:
-      app: {{ .Values.stress-ng.name }}
+      app: {{ .Values.stressng.name }}
   template:
     metadata:
       labels:
-        app: {{ .Values.stress-ng.name }}
+        app: {{ .Values.stressng.name }}
     spec:
       containers:
         - name: stress-ng

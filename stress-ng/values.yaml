@@ -1,4 +1,4 @@
-stress-ng:
+stressng:
   name: stress-ng
   fullname: stress-ng
 replicaCount: 1
