@@ -1,0 +1,23 @@
+stressng:
+  name: stress-ng
+  fullname: stress-ng
+replicaCount: 1
+image:
+  repository: polinux/stress-ng
+  tag: latest
+  pullPolicy: IfNotPresent
+resources:
+  requests:
+    cpu: "100m"
+    memory: "128Mi"
+  limits:
+    cpu: "2"
+    memory: "256Mi"
+# Default stress-ng args (can override with --set or -f)
+args:
+  - "--cpu"
+  - "2"
+  - "--cpu-load"
+  - "50"
+  - "--timeout"
+  - "0"

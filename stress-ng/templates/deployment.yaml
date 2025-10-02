@@ -1,0 +1,27 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ .Values.stressng.fullname }}
+  labels:
+    app: {{ .Values.stressng.name }}
+spec:
+  replicas: {{ .Values.replicaCount }}
+  selector:
+    matchLabels:
+      app: {{ .Values.stressng.name }}
+  template:
+    metadata:
+      labels:
+        app: {{ .Values.stressng.name }}
+    spec:
+      containers:
+        - name: stress-ng
+          image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
+          imagePullPolicy: {{ .Values.image.pullPolicy }}
+          command: ["stress-ng"]
+          args:
+            {{- range .Values.args }}
+            - {{ . | quote }}
+            {{- end }}
+          resources:
+            {{- toYaml .Values.resources | nindent 12 }}
