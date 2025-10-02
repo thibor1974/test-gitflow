@@ -1,0 +1,6 @@
+apiVersion: v2
+name: dummy-app
+description: A Helm chart for a dummy app with tunable CPU and memory usage and metrics UI
+type: application
+version: 0.1.0
+appVersion: "1.0.0"
